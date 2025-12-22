@@ -33,3 +33,19 @@ subprojects {
 		useJUnitPlatform()
 	}
 }
+
+project(':app-user') {
+	bootJar {
+		enabled = true
+		mainClass = 'com.study.ecs.user.AppUserApplication'
+	}
+	jar { enabled = false }
+}
+
+project(':app-order') {
+	bootJar {
+		enabled = true
+		mainClass = 'com.study.ecs.order.AppOrderApplication'
+	}
+	jar { enabled = false }
+}

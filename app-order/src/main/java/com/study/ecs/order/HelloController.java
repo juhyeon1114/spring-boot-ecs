@@ -1,4 +1,4 @@
-package com.study.ecs;
+package com.study.ecs.order;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
