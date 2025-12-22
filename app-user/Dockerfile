@@ -2,7 +2,7 @@ FROM public.ecr.aws/amazoncorretto/amazoncorretto:25-al2023-jdk
 
 WORKDIR /app
 
-COPY build/libs/app-user-1.0.0.jar ./application.jar
+COPY build/libs/app-user-1.0.jar ./application.jar
 
 EXPOSE 8080
 
