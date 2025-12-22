@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: app-order-service
+server:
+  port: 8080
