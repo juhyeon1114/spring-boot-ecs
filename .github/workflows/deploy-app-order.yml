@@ -106,7 +106,7 @@ jobs:
           image: ${{ needs.build.outputs.img-uri }}:${{ needs.build.outputs.img-tag }}
 
       - name: ECS 서비스를 배포한다
-        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v2
         with:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
           service: app-order-service
