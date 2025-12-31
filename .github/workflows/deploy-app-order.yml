@@ -67,18 +67,18 @@ jobs:
         with:
           tags: ${{ env.img-uri }}:${{ env.img-tag }}
           push: true
-#          cache-from: type=registry,ref=${{ env.img-uri }}:cache
-#          cache-to: type=registry,mode=max,image-manifest=true,oci-mediatypes=true,ref=${{ env.img-uri }}:cache
+          #          cache-from: type=registry,ref=${{ env.img-uri }}:cache
+          #          cache-to: type=registry,mode=max,image-manifest=true,oci-mediatypes=true,ref=${{ env.img-uri }}:cache
           context: app-order
           file: app-order/Dockerfile
-#          platforms: linux/arm64
+      #          platforms: linux/arm64
       - name: 이미지 태그를 출력한다
         env:
-          img-uri: ${{ steps.login-ecr.outputs.registry }}/app-order-service
           img-tag: ${{ steps.tag.outputs.this }}
         run: |
           echo "# 이미지 태그" >> $GITHUB_STEP_SUMMARY
           echo "tag: \`${{ env.img-tag }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "uri: \`${{ env.img-uri }}\`" >> $GITHUB_STEP_SUMMARY
 
   deploy:
     needs: build
