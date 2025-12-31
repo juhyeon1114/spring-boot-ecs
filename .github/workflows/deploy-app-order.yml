@@ -16,6 +16,7 @@ jobs:
 
     outputs:
       img-tag: ${{ steps.tag.outputs.this }}
+      img-uri: ${{ steps.login-ecr.outputs.registry }}/app-order-service
 
     steps:
       - name: 컨테이너 tag 를 생성한다
