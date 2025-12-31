@@ -74,6 +74,7 @@ jobs:
 #          platforms: linux/arm64
       - name: 이미지 태그를 출력한다
         env:
+          img-uri: ${{ steps.login-ecr.outputs.registry }}/app-order-service
           img-tag: ${{ steps.tag.outputs.this }}
         run: |
           echo "# 이미지 태그" >> $GITHUB_STEP_SUMMARY
